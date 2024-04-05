@@ -32,7 +32,7 @@ class Utils {
             : canvasOrContext;
     }
 
-    static drawLetter(canvasOrContext, letter, contextOptions = {}) {
+    static drawChar(canvasOrContext, char, contextOptions = {}) {
         let context = Utils.getContext(canvasOrContext);
         context.save();
         for (const key in contextOptions) {
@@ -43,7 +43,7 @@ class Utils {
         let xMax = context.canvas.width - fontSize;
         let yMin = fontSize;
         let yMax = context.canvas.height;
-        context.fillText(letter, Random.int(xMin, xMax), Random.int(yMin, yMax));
+        context.fillText(char, Random.int(xMin, xMax), Random.int(yMin, yMax));
         context.restore();
     }
 
