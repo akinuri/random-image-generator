@@ -28,6 +28,10 @@
             font : "50px Arial",
             fillStyle : Random.color(),
         });
+        Utils.drawChar(canvas, Random.int(0, 9), {
+            font : "50px Arial",
+            fillStyle : Random.color(),
+        });
         dataEl.textContent = Utils.toData(canvas, { asRaw: true })
     }
 </script>
