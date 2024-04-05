@@ -11,8 +11,10 @@ class Utils {
 
     static fill(canvasOrContext, color) {
         let context = Utils.getContext(canvasOrContext);
+        context.save();
         context.fillStyle = color;
         context.fillRect(0, 0, context.canvas.width, context.canvas.height);
+        context.restore();
     }
 
     static toData(canvasOrContext, { type = "image/png", quality = 1, asRaw = false } = {}) {
@@ -28,6 +30,21 @@ class Utils {
         return canvasOrContext instanceof HTMLCanvasElement
             ? canvasOrContext.getContext("2d")
             : canvasOrContext;
+    }
+
+    static drawLetter(canvasOrContext, letter, contextOptions = {}) {
+        let context = Utils.getContext(canvasOrContext);
+        context.save();
+        for (const key in contextOptions) {
+            context[key] = contextOptions[key];
+        }
+        let fontSize = contextOptions.font?.match(/\d+/)?.[0] || 50;
+        let xMin = 0;
+        let xMax = context.canvas.width - fontSize;
+        let yMin = fontSize;
+        let yMax = context.canvas.height;
+        context.fillText(letter, Random.int(xMin, xMax), Random.int(yMin, yMax));
+        context.restore();
     }
 
 }

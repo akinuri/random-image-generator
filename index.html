@@ -10,7 +10,7 @@
 <body>
 
 <br>
-<textarea id="data" cols="80" rows="10"></textarea>
+<textarea id="data" cols="80" rows="20"></textarea>
 <br>
 <button onclick="generate()">Generate</button>
 
@@ -24,6 +24,10 @@
     generate();
     function generate() {
         Utils.fill(canvas, Random.color());
+        Utils.drawLetter(canvas, Random.letter(), {
+            font : "50px Arial",
+            fillStyle : Random.color(),
+        });
         dataEl.textContent = Utils.toData(canvas, { asRaw: true })
     }
 </script>
