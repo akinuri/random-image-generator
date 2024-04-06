@@ -7,7 +7,7 @@ A tool that actually generates random images, not just picks a random image from
 ```
 background
     colors      +
-    gradients   -
+    gradients   +
     patterns    -
     noise       -
 
