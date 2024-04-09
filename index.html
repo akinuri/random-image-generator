@@ -26,6 +26,18 @@
         Random.int(0,1) == 0
             ? Utils.fill(canvas, Random.color())
             : Utils.gradientFill(canvas, [...Random.colors(2, 3)]);
+        let rectWidth = Random.int(canvas.width * 0.2, canvas.width * 0.8);
+        let rectHeight = Random.int(canvas.height * 0.2, canvas.height * 0.8);
+        let strokeStyle = Random.pick([null, Random.color()]);
+        Utils.drawRect(
+            canvas,
+            Random.int(0, canvas.width - rectWidth),
+            Random.int(0, canvas.height - rectHeight),
+            rectWidth,
+            rectHeight,
+            strokeStyle,
+            strokeStyle ? Random.pick([null, Random.color()]) : Random.color(),
+        );
         Utils.drawChar(canvas, Random.letter(), {
             font : "50px Arial",
             fillStyle : Random.color(),
