@@ -14,8 +14,14 @@ background
 foreground
     letters     +
     digits      +
-    shapes      -
+    shapes
+        rect    +
+        circle  -
+        poly    -
+        star    -
+        arc     -
 
 misc
     scale       -
+    rotate      -
 ```
