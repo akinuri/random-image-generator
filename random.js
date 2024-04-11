@@ -16,9 +16,9 @@ class Random {
         return "#" + Random.pick("0123456789ABCDEF", 6).join("");
     }
 
-    static colors(min = 0, max = 5) {
+    static colors(minCount = 1, maxCount = 5) {
         let colors = [];
-        let count = Random.int(min, max);
+        let count = Random.int(minCount, maxCount);
         for (let i = 0; i < count; i++) {
             colors.push(Random.hexColor());
         }

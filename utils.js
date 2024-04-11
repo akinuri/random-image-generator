@@ -94,7 +94,6 @@ class Utils {
             context.fill();
         }
         context.restore();
-        console.log(width, height, x, y);
     }
 
 }
