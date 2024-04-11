@@ -12,7 +12,7 @@ class Random {
         return picks;
     }
 
-    static color() {
+    static hexColor() {
         return "#" + Random.pick("0123456789ABCDEF", 6).join("");
     }
 
@@ -20,7 +20,7 @@ class Random {
         let colors = [];
         let count = Random.int(min, max);
         for (let i = 0; i < count; i++) {
-            colors.push(Random.color());
+            colors.push(Random.hexColor());
         }
         return colors;
     }
