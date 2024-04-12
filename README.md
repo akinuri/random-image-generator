@@ -16,7 +16,7 @@ foreground
     digits      +
     shapes
         rect    +
-        circle  -
+        circle  +
         poly    -
         star    -
         arc     -
